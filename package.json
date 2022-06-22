@@ -1,0 +1,23 @@
+{
+  "name": "@nest-react-boilerplate/root",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "server",
+      "front"
+    ]
+  },
+  "scripts": {
+    "server": "yarn workspace @nest-react-boilerplate/server",
+    "front": "yarn workspace @nest-react-boilerplate/front",
+    "start:dev": "concurrently \"yarn server start:dev\" \"yarn front start\"",
+    "start:prod": "yarn server start:prod",
+    "build": "yarn server build && yarn front build"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
+  }
+}
